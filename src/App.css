@@ -1,0 +1,212 @@
+/* Counter button styles for the starter interface. */
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Hero logo composition used by the starter visual layout. */
+.hero {
+  position: relative;
+
+  /* Shared centering for each stacked logo layer. */
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  /* Base layer anchors the rest of the composed hero mark. */
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  /* Overlay layers are positioned on top of the base mark. */
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  /* Framework layer is tilted to match the starter perspective effect. */
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  /* Vite layer sits lower in the same perspective stack. */
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+/* Central starter layout that vertically groups the main content. */
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  /* Tightens spacing on narrower screens. */
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+/* Two-column next-step section for documentation and links. */
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  /* Each child column receives matching spacing. */
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  /* Icons are sized consistently across next-step items. */
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Stacks next-step content on tablet and mobile widths. */
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Documentation column divider. */
+#docs {
+  border-right: 1px solid var(--border);
+
+  /* Converts the divider from vertical to horizontal on smaller screens. */
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* Link list inside the next-step section. */
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  /* Keeps small brand marks aligned with their link text. */
+  .logo {
+    height: 18px;
+  }
+
+  /* Link pills share the same surface and hover treatment. */
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    /* Hover state lifts links with the configured shadow. */
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    /* Inline icons keep a fixed size inside each link. */
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  /* Link pills wrap into a compact grid on narrower screens. */
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /* Each list item takes half the available row when wrapped. */
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    /* Full-width anchors keep wrapped items easy to tap. */
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+/* Spacer preserves the starter page rhythm below the content. */
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+/* Tick container draws small arrow markers at the ends of a line. */
+.ticks {
+  position: relative;
+  width: 100%;
+
+  /* Pseudo-elements create the left and right tick shapes. */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  /* Left tick points inward from the start edge. */
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  /* Right tick points inward from the end edge. */
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
