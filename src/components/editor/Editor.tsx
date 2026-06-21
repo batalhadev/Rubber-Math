@@ -42,7 +42,13 @@ export const Editor = () => {
       if (jump) {
         el.setSelectionRange(jump[0], jump[1]);
       } else {
-        injectText('  ');
+        const insertPos = el.selectionEnd;
+        const newText = el.value.slice(0, insertPos) + '  ' + el.value.slice(insertPos);
+        setRawText(newText);
+        requestAnimationFrame(() => {
+          el.setSelectionRange(insertPos + 2, insertPos + 2);
+          el.focus();
+        });
       }
       return;
     }

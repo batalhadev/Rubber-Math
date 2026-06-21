@@ -11,7 +11,14 @@ export const Topbar = () => {
     <header className="shrink-0 bg-bg-secondary border-b border-border">
       {/* First row contains the product title and primary actions. */}
       <div className="flex items-center justify-between h-10 px-4">
-        <span className="text-sm font-bold tracking-wide text-text-primary">Rubber Math</span>
+        <div className="flex items-center gap-2">
+          <img 
+           src="/favicon.svg" 
+            alt="Logótipo Rubber Math" 
+           className="w-10 h-10 object-contain" 
+            />
+          <span className="text-sm font-bold tracking-wide text-text-prime">Rubber Math</span>
+        </div>
         <div className="flex items-center gap-2">
           <button
             onClick={toggleStepMode}
@@ -21,13 +28,13 @@ export const Topbar = () => {
                 : 'bg-bg-elevated border-border text-text-secondary hover:border-border-hover hover:text-text-primary'
             }`}
           >
-            passo a passo {stepMode ? '✓' : ''}
+            Passo a Passo {stepMode ? '✓' : ''}
           </button>
           <button
             onClick={() => useAppStore.getState().setRawText('')}
             className="flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded border border-border bg-bg-elevated text-text-secondary hover:border-border-hover hover:text-text-primary transition-colors cursor-pointer"
           >
-            × claro
+            × Limpar
           </button>
         </div>
       </div>
@@ -38,7 +45,7 @@ export const Topbar = () => {
           <button
             onClick={() => stepMode && toggleStepMode()}
             className={`px-3 h-7 text-[10px] font-bold tracking-widest uppercase transition-colors cursor-pointer ${
-              !stepMode ? 'text-text-primary border-b-2 border-text-primary' : 'text-text-muted hover:text-text-secondary'
+              !stepMode ? 'text-accent border-b-2 border-accent' : 'text-text-muted hover:text-accent-hover'
             }`}
           >
             Fonte LaTeX
@@ -47,7 +54,7 @@ export const Topbar = () => {
           <button
             onClick={() => !stepMode && toggleStepMode()}
             className={`px-3 h-7 text-[10px] font-bold tracking-widest uppercase transition-colors cursor-pointer ${
-              stepMode ? 'text-text-primary border-b-2 border-text-primary' : 'text-text-muted hover:text-text-secondary'
+              stepMode ? 'text-accent border-b-2 border-accent' : 'text-text-muted hover:text-accent-hover'
             }`}
           >
             Passo a Passo

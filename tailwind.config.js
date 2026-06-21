@@ -18,6 +18,7 @@ export default {
         },
         text: {
           primary: "var(--color-text-primary)",
+          prime: "var(--color-text-prime)",
           secondary: "var(--color-text-secondary)",
           muted: "var(--color-text-muted)",
         },

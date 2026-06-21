@@ -27,7 +27,7 @@ export const PreviewArea = () => {
           className="flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-bold text-text-secondary hover:text-text-primary bg-bg-elevated border border-border rounded hover:border-border-hover transition-colors cursor-pointer"
         >
           <Copy size={10} />
-          copiar latex
+          Copiar
         </button>
       </div>
 
