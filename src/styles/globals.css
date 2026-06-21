@@ -1,11 +1,28 @@
 @import 'katex/dist/katex.min.css';
 @import "tailwindcss"; /* Loads Tailwind v4 utilities. */
+@config "../../tailwind.config.js";
 
 @layer base {
+  :root {
+    --color-bg-primary: #0f1117;
+    --color-bg-secondary: #181c26;
+    --color-bg-elevated: #1e2230;
+    --color-border: #2d3348;
+    --color-border-hover: #555e78;
+    --color-text-primary: #e2e6f0;
+    --color-text-secondary: #8a93b0;
+    --color-text-muted: #3d4560;
+    --color-accent: #e2791a;
+    --color-accent-hover: #f08a24;
+    --color-success: #5dcaa5;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+  }
+
   /* Base document styles keep the app in a dark, full-screen editing surface. */
   body {
-    background-color: #0f1117;
-    color: #e2e6f0;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
@@ -15,5 +32,5 @@
 /* Custom scrollbar styling for editor-adjacent scroll areas. */
 .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: #2d3348; border-radius: 4px; }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #555e78; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--color-border-hover); }

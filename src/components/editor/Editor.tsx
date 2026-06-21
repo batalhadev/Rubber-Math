@@ -67,14 +67,14 @@ export const Editor = () => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#0f1117]">
+    <div className="flex flex-col h-full bg-bg-primary">
       {/* Main controlled textarea for authoring equations and comments. */}
       <textarea
         ref={editorRef}
         value={rawText}
         onChange={(e) => setRawText(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="w-full h-full px-6 py-4 bg-transparent text-[#e2e6f0] font-mono text-sm resize-none outline-none leading-relaxed placeholder-[#3d4560]"
+        className="w-full h-full px-6 py-4 bg-transparent text-text-primary font-mono text-sm resize-none outline-none leading-relaxed placeholder:text-text-muted"
         placeholder={placeholder}
         spellCheck={false}
       />

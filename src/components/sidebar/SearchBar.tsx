@@ -10,8 +10,8 @@ const SearchBar: React.FC<{ value: string; onChange: (v: string) => void }> = ({
     // Inline styles keep this standalone component independent from Tailwind classes.
     style={{
       width: '100%', padding: '0.4rem 0.6rem',
-      background: 'var(--bg)', border: '1px solid var(--border)',
-      borderRadius: '4px', color: 'var(--text)', fontSize: '0.85rem',
+      background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)',
+      borderRadius: '4px', color: 'var(--color-text-secondary)', fontSize: '0.85rem',
     }}
   />
 );

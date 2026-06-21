@@ -8,24 +8,24 @@ export const Topbar = () => {
   const lineCount = rawText ? rawText.split('\n').length : 1;
 
   return (
-    <header className="shrink-0 bg-[#181c26] border-b border-[#2d3348]">
+    <header className="shrink-0 bg-bg-secondary border-b border-border">
       {/* First row contains the product title and primary actions. */}
       <div className="flex items-center justify-between h-10 px-4">
-        <span className="text-sm font-bold tracking-wide text-[#e2e6f0]">Rubber Math</span>
+        <span className="text-sm font-bold tracking-wide text-text-primary">Rubber Math</span>
         <div className="flex items-center gap-2">
           <button
             onClick={toggleStepMode}
             className={`flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded border transition-colors cursor-pointer ${
               stepMode
-                ? 'bg-[#1e2230] border-[#5dcaa5] text-[#5dcaa5]'
-                : 'bg-[#1e2230] border-[#2d3348] text-[#8a93b0] hover:border-[#555e78]'
+                ? 'bg-bg-elevated border-success text-success'
+                : 'bg-bg-elevated border-border text-text-secondary hover:border-border-hover hover:text-text-primary'
             }`}
           >
             passo a passo {stepMode ? '✓' : ''}
           </button>
           <button
             onClick={() => useAppStore.getState().setRawText('')}
-            className="flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded border border-[#2d3348] bg-[#1e2230] text-[#8a93b0] hover:border-[#555e78] transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded border border-border bg-bg-elevated text-text-secondary hover:border-border-hover hover:text-text-primary transition-colors cursor-pointer"
           >
             × claro
           </button>
@@ -33,27 +33,27 @@ export const Topbar = () => {
       </div>
 
       {/* Second row contains mode tabs and live text counters. */}
-      <div className="flex items-center justify-between h-7 px-4 border-t border-[#2d3348]">
+      <div className="flex items-center justify-between h-7 px-4 border-t border-border">
         <div className="flex items-center gap-0">
           <button
             onClick={() => stepMode && toggleStepMode()}
             className={`px-3 h-7 text-[10px] font-bold tracking-widest uppercase transition-colors cursor-pointer ${
-              !stepMode ? 'text-[#e2e6f0] border-b-2 border-[#e2e6f0]' : 'text-[#555e78] hover:text-[#8a93b0]'
+              !stepMode ? 'text-text-primary border-b-2 border-text-primary' : 'text-text-muted hover:text-text-secondary'
             }`}
           >
             Fonte LaTeX
           </button>
-          <span className="text-[#2d3348] text-xs">›</span>
+          <span className="text-border text-xs">›</span>
           <button
             onClick={() => !stepMode && toggleStepMode()}
             className={`px-3 h-7 text-[10px] font-bold tracking-widest uppercase transition-colors cursor-pointer ${
-              stepMode ? 'text-[#e2e6f0] border-b-2 border-[#e2e6f0]' : 'text-[#555e78] hover:text-[#8a93b0]'
+              stepMode ? 'text-text-primary border-b-2 border-text-primary' : 'text-text-muted hover:text-text-secondary'
             }`}
           >
             Passo a Passo
           </button>
         </div>
-        <div className="flex items-center gap-3 text-[10px] text-[#555e78] tracking-wider">
+        <div className="flex items-center gap-3 text-[10px] text-text-muted tracking-wider">
           <span>{charCount} CHARS</span>
           <span>·</span>
           <span>{lineCount} {lineCount === 1 ? 'LINHA' : 'LINHAS'}</span>

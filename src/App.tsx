@@ -7,12 +7,12 @@ import { Topbar } from './components/ui/Topbar';
 function App() {
   return (
     // Main application shell that pins the editor layout to the viewport.
-    <div className="flex flex-col h-screen w-screen bg-[#0f1117] text-[#e2e6f0] overflow-hidden">
+    <div className="flex flex-col h-screen w-screen bg-bg-primary text-text-primary overflow-hidden">
       {/* Integrated topbar with mode controls and document counters. */}
       <Topbar />
 
       {/* Full-width editor area with a fixed share of the vertical space. */}
-      <div className="h-[35%] min-height-[180px] border-b-2 border-[#2d3348] shrink-0">
+      <div className="h-[35%] min-height-[180px] border-b-2 border-border shrink-0">
         <Editor />
       </div>
 

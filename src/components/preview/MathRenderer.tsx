@@ -16,7 +16,7 @@ export const MathRenderer = ({ tex, displayMode = true }: MathRendererProps) => 
         throwOnError: false, // Shows parsing errors in red instead of crashing.
       });
     } catch (err) {
-      return `<span class="text-red-500">${String(err)}</span>`;
+      return `<span class="text-error">${String(err)}</span>`;
     }
   }, [tex, displayMode]);
 
